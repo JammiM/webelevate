@@ -10,16 +10,23 @@
   class Game
   {
 
-    public $guesses = array();
+    private $guesses = array();
 
     public function saveGuess($number)
     {
-      array_push($guesses,$number);
+      $this->guesses[] = $number;
     }
 
     public function listGuesses()
     {
-      return $guesses;
+
+      $lengthOfArray = count($this->guesses);
+
+      #for ($i=0; $i < $lengthOfArray; $i++) {
+      # echo  $this->guesses[$i];
+      #}
+
+        var_dump($lengthOfArray);
     }
 
     public function guessHandler()
@@ -40,15 +47,13 @@
 
       $dice = new Dice();
       $NumberGenerator = new NumberGenerator();
-
-      print "Welcome  <br>";
-
       $dice->throwDice();
       $correctAnswer = $dice->getFaceValue();
 
       for ($i=0; $i<=2; $i++) {
 
-        $nextGuess = $NumberGenerator->makeAGuess();
+        # $nextGuess = $NumberGenerator->makeAGuess();
+        $nextGuess = $this->guessHandler();
 
         if ($nextGuess == $correctAnswer) {
           echo "<br>Roll number " .($i+1). " was correct ! You rolled a " . $correctAnswer . "<br>";

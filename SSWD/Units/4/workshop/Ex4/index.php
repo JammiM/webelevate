@@ -9,6 +9,6 @@
 
   $game = new Game();
   $game->play();
-  //$game->listGuesses();
+  $game->listGuesses();
 
 ?>
