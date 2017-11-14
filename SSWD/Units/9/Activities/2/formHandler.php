@@ -1,6 +1,6 @@
 <?php
 
-  $result = $_GET['myAge'];
+  $result = $_POST["myAge"];
 
   echo "The result : " . $result;
 

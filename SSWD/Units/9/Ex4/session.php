@@ -1,16 +1,18 @@
-<?php  
+<?php
+
+	/**
+	 * 	Displays the held cookie from the form 
+	 */
 
 	session_start();
 
-	setcookie('name', $test);
-	# setcookie('name', $test, time()+3600*24);
+
 	$test =123;
 	$_SESSION['v1'] = $test;
 	echo $_SESSION['v1'];
 
-	$name = $_POST["name"];
-
-
-	$_COOKIE['name'];
+	echo "Cookie is : " . $_COOKIE['myAge'];
+	setcookie('myAge', $test);
+	setcookie('myAge', $test, time()+3600*24);
 
 ?>

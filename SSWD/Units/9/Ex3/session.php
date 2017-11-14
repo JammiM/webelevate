@@ -1,17 +1,16 @@
-<?php  
+<?php
+
+	/**
+	 * 	Retains the data via sessions
+	 */
 
 	session_start();
 
-
-
-
-	$test =123;
+	$test = 123;
 	$_SESSION['v1'] = $test;
 	echo $_SESSION['v1'];
 
-	$name = $_POST["name"];
-
-
+	$age = $_POST["myAge"];
 
 
 ?>
